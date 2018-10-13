@@ -1,7 +1,7 @@
 {
   "name": "@jeetiss/callbag-xhr",
   "version": "0.0.1",
-  "description": "👜 Callbag .",
+  "description": "👜 Callbag wrapper for xhr.",
   "main": "dist/callbag-xhr.js",
   "module": "dist/callbag-xhr.es.js",
   "files": [
