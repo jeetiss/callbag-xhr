@@ -1,15 +1,22 @@
-const request = ({ method, url, data, download, upload } = {}) => (
-  start,
-  sink,
-) => {
+const request = ({
+  method,
+  url,
+  data,
+  download,
+  upload,
+  responseType,
+} = {}) => (start, sink) => {
   if (start !== 0) return
 
   const xhr = new XMLHttpRequest()
+
+  responseType && (xhr.responseType = responseType)
+
   const handler = () => {
     if (xhr.readyState !== 4) return
 
     if (xhr.status >= 200 && xhr.status < 300) {
-      sink(1, { type: 'response', data: xhr.responseText })
+      sink(1, { type: 'response', data: xhr.response || xhr.responseText })
       sink(2)
       return
     }
