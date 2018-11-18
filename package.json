@@ -12,7 +12,7 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "prepare": "npm run build",
-    "test": "karma start karma.config.js --single-run --nocache"
+    "test": "node ./test/helpers/starter.js"
   },
   "repository": {
     "type": "git",
